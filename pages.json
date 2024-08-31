@@ -1,17 +1,69 @@
 {
 	"pages": [{
-		"path": "pages/index/index",
-		"style": {
-			"navigationBarTitleText": "uni-app"
+			"path": "pages/home/home",
+			"style": {
+				// 单独的 navigationBarTitleText 或其他导航栏样式配置，这些配置会覆盖全局设置
+				"navigationBarTitleText": "自信一点",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/cate/cate",
+			"style": {
+				"navigationBarTitleText": "自信一点",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/cart/cart",
+			"style": {
+				"navigationBarTitleText": "自信一点",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "自信一点",
+				"enablePullDownRefresh": false
+			}
 		}
-	}],
+	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "自信一点",
+		"navigationBarBackgroundColor": "#f79c1f",
+		"backgroundColor": "#f79c1f",
 		"app-plus": {
 			"background": "#efeff4"
 		}
+	},
+	"tabBar": {
+		"selectedColor": "#f79c1f",
+		"list": [{
+				"pagePath": "pages/home/home",
+				"text": "首页",
+				"iconPath": "static/home_icon/home.png",
+				"selectedIconPath": "static/home_icon/home-active.png"
+			},
+			{
+				"pagePath": "pages/cate/cate",
+				"text": "分类",
+				"iconPath": "static/cate_icon/category.png",
+				"selectedIconPath": "static/cate_icon/category-avtive.png"
+			},
+			{
+				"pagePath": "pages/cart/cart",
+				"text": "购物车",
+				"iconPath": "static/cart_icon/cart.png",
+				"selectedIconPath": "static/cart_icon/cart-avtive.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我的",
+				"iconPath": "static/my_icon/my.png",
+				"selectedIconPath": "static/my_icon/my-avtive.png"
+			}
+		]
 	}
 }
