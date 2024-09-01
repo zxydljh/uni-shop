@@ -1,7 +1,9 @@
 <template>
 	<view>
 		<!-- 使用自定义的搜索组件 -->
-		<view class="search-box"><my-search @click="gotoSearch"></my-search></view>
+		<view class="search-box">
+			<my-search @click="gotoSearch"></my-search>
+		</view>
 
 		<!-- 轮播图区域 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
@@ -67,6 +69,15 @@
 			this.getFloorListData();
 		},
 		methods: {
+			// 点击搜索触发事件
+			gotoSearch() {
+				console.log('ok');
+				// 跳转到search、页面
+				uni.navigateTo({
+					url: '/subpkg/search/search'
+				});
+			},
+
 			// 1.3. 获取轮播图数据的方法
 			async getSwiperListData() {
 				// 1.4 发起请求

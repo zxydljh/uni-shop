@@ -5,6 +5,7 @@ const request = (options) => {
     wx.request({
       ...options,
 	  url: baseUrl + options.url,
+	  // data: options.params || {}, // 正确传递参数
       success: (res) => {
         if (res.statusCode === 200) {
           resolve(res.data);

@@ -1,4 +1,8 @@
 <template>
+	<!-- 使用自定义的搜索组件 -->
+	<my-search @click="gotoSearch"></my-search>
+
+
 	<view>
 		<view class="scroll-view-container">
 			<!-- 左侧的滑动区域 -->
@@ -61,6 +65,15 @@
 			this.getCateListData();
 		},
 		methods: {
+			// 点击搜索触发事件
+			gotoSearch() {
+				console.log('ok');
+				// 跳转到search、页面
+				uni.navigateTo({
+					url: '/subpkg/search/search'
+				});
+			},
+
 			// 获取分类数据
 			async getCateListData() {
 				const res = await getCateMultiDirList();
@@ -112,7 +125,7 @@
 				&::before {
 					content: '';
 					display: block;
-					background-color: #c00000;
+					background-color: #ff9500;
 					width: 3px;
 					height: 30px;
 					position: absolute;
