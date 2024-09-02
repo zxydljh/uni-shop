@@ -5,19 +5,20 @@
 		<view class="goods-item-left">
 			<!-- 动态绑定checked 在props：goods里面，有个goods_state属性 -->
 			<radio v-if="showRadio" :checked="goods.isActive" color="#c00000" @click="radioClickHandler"></radio>
-			<image class="goods-pic" :src="goods.imageUrl || defaultPic"></image>
+			<image class="goods-pic" :src="goods.imageUrl || goods.goods_small_logo || defaultPic"></image>
 		</view>
 		<!-- 右侧的盒子 标题 价格 -->
 		<view class="goods-item-right">
 			<!-- 有些图片没有了，我们定义一个默认的图片，用来加载 -->
-			<view class="goods-name">{{ goods.name }}</view>
+			<view class="goods-name">{{ goods.name || goods.goods_name }}</view>
 			<!-- 用过滤器过滤价格，保留2位小数 -->
 			<view class="goods-info-box">
 				<!-- 商品价格 -->
-				<view class="goods-price">￥{{ goods.price | tofixed }}</view>
+				<view class="goods-price">￥{{ goods.price || goods.goods_price | tofixed }}</view>
 				<!-- 商品数量 -->
-				<uni-number-box v-if="showNum" :min="1" :value="goods.stock"
-					@change="numChangeHandler"></uni-number-box>
+				<uni-number-box v-if="showNum" :min="1" :value="goods.stock || goods.goods_count"
+					@change="numChangeHandler">
+				</uni-number-box>
 			</view>
 		</view>
 	</view>
