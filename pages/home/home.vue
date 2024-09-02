@@ -132,7 +132,7 @@
 				// 3.7 对数据进行处理
 				res.data.forEach(cate => {
 					cate.commodityVOList.forEach(comm => {
-						comm.linkUrl = '/subpkg/goods_list/goods_list?query=' + comm.name;
+						comm.linkUrl = '/subpkg/goods_list/goods_list?query=' + comm.name + '&cid=' + comm.id;
 					});
 				});
 				// 3.6 成功 => 赋值
