@@ -36,10 +36,14 @@
 </template>
 
 <script>
+	// 导入自己封装的 mixin 模块
+	import badgeMix from '@/mixins/tabbar-badge.js';
 	import {
 		getCateMultiDirList
 	} from '../../api/cate_api/cate_api';
 	export default {
+		// 将 badgeMix 混入到当前的页面中进行使用
+		mixins: [badgeMix],
 		data() {
 			return {
 				// 当前设备可用的高度

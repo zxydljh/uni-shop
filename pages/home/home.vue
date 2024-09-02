@@ -44,12 +44,16 @@
 </template>
 
 <script>
+	// 导入自己封装的 mixin 模块
+	import badgeMix from '@/mixins/tabbar-badge.js';
 	import {
 		getSwiperList,
 		getNavList,
 		getFloorList
 	} from '../../api/home_api/home_api';
 	export default {
+		// 将 badgeMix 混入到当前的页面中进行使用
+		mixins: [badgeMix],
 		data() {
 			return {
 				// 1.1 轮播图的数据列表，默认为空数组
@@ -132,7 +136,8 @@
 				// 3.7 对数据进行处理
 				res.data.forEach(cate => {
 					cate.commodityVOList.forEach(comm => {
-						comm.linkUrl = '/subpkg/goods_list/goods_list?query=' + comm.name + '&cid=' + comm.id;
+						comm.linkUrl = '/subpkg/goods_list/goods_list?query=' + comm.name + '&cid=' +
+							comm.id;
 					});
 				});
 				// 3.6 成功 => 赋值
